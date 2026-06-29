@@ -136,7 +136,7 @@ namespace Nehta.VendorLibrary.PCEHR
 		/// </summary>
 		/// <param name="pcehrHeader">PCEHR header.</param>
 		/// <returns>Query response.</returns>
-		internal async Task<responseStatusType> GainPCEHRAccessAsync(PCEHRHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord)
+		internal async Task<gainPCEHRAccessResponse> GainPCEHRAccessAsync(PCEHRHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord)
 		{
 			var timestamp = new timestampType()
 			{
@@ -155,7 +155,7 @@ namespace Nehta.VendorLibrary.PCEHR
 
             var response = await pcehrProfileClient.gainPCEHRAccessAsync(request);
 
-            return response.responseStatus;
+            return response;
 		}
 
 		/// <summary>

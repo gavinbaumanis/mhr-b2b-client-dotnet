@@ -13,17 +13,15 @@ namespace Nehta.VendorLibrary.PCEHR
         /// <param name="accessPcehrRecord">Access record.</param>
         /// <param name="individual">Matching individual.</param>
         /// <returns>Response.</returns>
-        responseStatusType GainPCEHRAccess(CommonPcehrHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord,
-            out gainPCEHRAccessResponseIndividual individual);
+        responseStatusType GainPCEHRAccess(CommonPcehrHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord, out gainPCEHRAccessResponseIndividual individual);
 
 		/// <summary>
 		/// Requests access to an individuals PCEHR. The IHI is specified within the PCEHR header.
 		/// </summary>
 		/// <param name="pcehrHeader">PCEHR header.</param>
 		/// <param name="accessPcehrRecord">Access record.</param>
-		/// <param name="individual">Matching individual.</param>
 		/// <returns>Response.</returns>
-		Task<responseStatusType> GainPCEHRAccessAsync(CommonPcehrHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord);
+		Task<gainPCEHRAccessResponse> GainPCEHRAccessAsync(CommonPcehrHeader pcehrHeader, gainPCEHRAccessPCEHRRecord accessPcehrRecord);
 
 	}
 }
